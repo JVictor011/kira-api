@@ -83,9 +83,36 @@ A Kira é uma **proptech** que busca facilitar o processo de aluguel de imóveis
 
 ## 👨‍💻 Equipe
 
-- [**João Victor**](https://github.com/JVictor011) – Diretor de Tecnologia  
-- [**Victor Wesley**](https://github.com/vctrwesley) – Diretor de Marketing  
-- [**Felipe Liet**](https://github.com/FelpLiet) – Diretor Geral  
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/JVictor011">
+        <img src="https://github.com/JVictor011.png" width="100px;" alt="João Victor"/>
+        <br />
+        <sub><b>João Victor</b></sub><br />
+        Diretor de Tecnologia
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/vctrwesley">
+        <img src="https://github.com/vctrwesley.png" width="100px;" alt="Victor Wesley"/>
+        <br />
+        <sub><b>Victor Wesley</b></sub><br />
+        Diretor de Marketing
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/FelpLiet">
+        <img src="https://github.com/FelpLiet.png" width="100px;" alt="Felipe Liet"/>
+        <br />
+        <sub><b>Felipe Liet</b></sub><br />
+        Diretor Geral
+      </a>
+    </td>
+  </tr>
+</table>
+
+---
 
 ---
 
