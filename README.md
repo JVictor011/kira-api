@@ -12,7 +12,7 @@ A Kira é uma **proptech** que busca facilitar o processo de aluguel de imóveis
 
 ## 🔧 Tecnologias Utilizadas
 
-- **Java 17+**
+- **Java 18+**
 - **Spring Boot**
 - **Spring Data JPA**
 - **Spring Security com JWT**
