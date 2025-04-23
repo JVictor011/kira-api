@@ -106,11 +106,13 @@ public class UsuarioService implements UserDetailsService {
         return usuarioMapper.toDTO(getById(id));
     }
 
-    public void update(Long id, UsuarioRequestDTO dto){
+    public UsuarioResponseDTO update(Long id, UsuarioRequestDTO dto){
         Usuario usuario = getById(id);
 
         usuarioMapper.update(usuario, dto);
         usuarioRepository.save(usuario);
+
+        return usuarioMapper.toDTO(usuario);
     }
 
     public void delete(Long id){
