@@ -19,7 +19,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public RoleHierarchy roleHierarchy() {
         RoleHierarchyImpl roleHierarchy = new RoleHierarchyImpl();
 
-        roleHierarchy.setHierarchy("ROLE_ADMIN > ROLE_COORDENADOR > ROLE_USER");
+        roleHierarchy.setHierarchy("ROLE_ADMIN > ROLE_LOCADOR > ROLE_LOCATARIO");
 
         return roleHierarchy;
     }
@@ -44,7 +44,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers(
                         "/api/usuarios",
                         "/api/usuarios/**"
-                ).hasAnyRole("USER", "ADMIN", "COORDENADOR")
+                ).hasAnyRole("ADMIN", "LOCADOR", "LOCATARIO")
                 .anyRequest().authenticated();
     }
 }

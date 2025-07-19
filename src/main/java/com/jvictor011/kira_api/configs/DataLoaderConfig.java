@@ -14,7 +14,7 @@ public class DataLoaderConfig {
     @Bean
     public CommandLineRunner initData(UsuarioRepository usuarioRepository, PasswordEncoder passwordEncoder) {
         return args -> {
-            if (usuarioRepository.existsByEmail("jv@gmail.com")) {
+            if (!usuarioRepository.existsByEmail("jv@gmail.com")) {
                 Usuario admin1 = new Usuario();
                 admin1.setNome("jv-dev");
                 admin1.setEmail("jv@gmail.com");
@@ -23,7 +23,7 @@ public class DataLoaderConfig {
                 usuarioRepository.save(admin1);
             }
 
-            if (usuarioRepository.existsByEmail("felipe@gmail.com")) {
+            if (!usuarioRepository.existsByEmail("felipe@gmail.com")) {
                 Usuario admin2 = new Usuario();
                 admin2.setNome("felipe");
                 admin2.setEmail("felipe@gmail.com");
@@ -32,7 +32,7 @@ public class DataLoaderConfig {
                 usuarioRepository.save(admin2);
             }
 
-            if (usuarioRepository.existsByEmail("vctr@gmail.com")) {
+            if (!usuarioRepository.existsByEmail("vctr@gmail.com")) {
                 Usuario admin3 = new Usuario();
                 admin3.setNome("vctr");
                 admin3.setEmail("vctr@gmail.com");
