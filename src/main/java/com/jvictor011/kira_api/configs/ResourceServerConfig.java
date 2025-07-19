@@ -43,7 +43,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 ).permitAll()
                 .antMatchers(
                         "/api/usuarios",
-                        "/api/usuarios/**"
+                        "/api/usuarios/**",
+                        "/api/imoveis",
+                        "/api/imoveis/**"
                 ).hasAnyRole("ADMIN", "LOCADOR", "LOCATARIO")
                 .anyRequest().authenticated();
     }

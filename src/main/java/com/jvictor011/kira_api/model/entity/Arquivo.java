@@ -19,6 +19,7 @@ public class Arquivo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String nome;
     private String url;
     private String key;
 }

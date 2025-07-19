@@ -15,6 +15,9 @@ public class MensagensErro {
     public static final String CPF_INVALIDO = "O CPF informado não é válido. Verifique o formato e tente novamente.";
     public static final String CNPJ_INVALIDO = "O CNPJ informado não é válido. Verifique o número e tente novamente.";
 
+    // IMOVEL
+    public static final String IMOVEL_NAO_ENCONTRADO = "Imóvel não encontrado. Verifique o identificador e tente novamente.";
+
     // Genérico
     public static final String ERRO_INTERNO = "Ocorreu um erro inesperado no servidor. Estamos trabalhando para resolver o problema. Tente novamente mais tarde.";
     public static final String DADOS_INVALIDOS = "Dados inválidos. Por favor, verifique os campos informados e tente novamente.";
