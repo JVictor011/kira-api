@@ -13,7 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "documentos")
-public class Documento {
+public class Arquivo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

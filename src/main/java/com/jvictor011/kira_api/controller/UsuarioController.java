@@ -45,6 +45,15 @@ public class UsuarioController {
         return ResponseEntity.ok(dto);
     }
 
+    @ApiOperation(value = "Retorna os dados do usuário autenticado")
+    @GetMapping("/me")
+    public ResponseEntity<UsuarioResponseDTO> getByToken() {
+        Long usuarioId = usuarioService.getIdByToken();
+        UsuarioResponseDTO usuarioDTO = usuarioService.getByIdDTO(usuarioId);
+        return ResponseEntity.ok(usuarioDTO);
+    }
+
+
     @ApiOperation(value = "Atualiza os dados de um usuário", notes = "Atualiza os dados de um usuário existente com base no ID informado.")
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioResponseDTO> update(

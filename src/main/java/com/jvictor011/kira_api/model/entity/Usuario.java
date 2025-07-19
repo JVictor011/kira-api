@@ -24,7 +24,7 @@ public class Usuario implements Serializable {
 
     private String nome;
     private LocalDate dataNascimento;
-    private String cpf;
+    private String documento;
     private String email;
     private String password;
 

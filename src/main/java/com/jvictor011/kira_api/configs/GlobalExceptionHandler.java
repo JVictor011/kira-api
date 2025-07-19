@@ -1,6 +1,7 @@
 package com.jvictor011.kira_api.configs;
 
 import com.jvictor011.kira_api.exception.*;
+import javassist.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -12,46 +13,28 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(SenhaNaoCoincideException.class)
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ErrorResponse> handleNotFoundException(NotFoundException ex) {
+        return buildErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(ValidationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<ErrorResponse> handleSenhaNaoCoincideException(SenhaNaoCoincideException ex) {
+    public ResponseEntity<ErrorResponse> handleValidationException(ValidationException ex) {
         return buildErrorResponse(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(EmailJaCadastradoException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<ErrorResponse> handleEmailJaCadastradoException(EmailJaCadastradoException ex) {
-        return buildErrorResponse(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    @ExceptionHandler(ConflictException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseEntity<ErrorResponse> handleConflictException(ConflictException ex) {
+        return buildErrorResponse(ex.getMessage(), HttpStatus.CONFLICT);
     }
 
-    @ExceptionHandler(CpfInvalidoException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<ErrorResponse> handleCpfInvalidoException(CpfInvalidoException ex) {
-        return buildErrorResponse(ex.getMessage(), HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(SenhaNaoValidaException.class)
+    @ExceptionHandler(BusinessException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public ResponseEntity<ErrorResponse> handleSenhaNaoValidaException(SenhaNaoValidaException ex) {
+    public ResponseEntity<ErrorResponse> handleBusinessException(BusinessException ex) {
         return buildErrorResponse(ex.getMessage(), HttpStatus.UNPROCESSABLE_ENTITY);
-    }
-
-    @ExceptionHandler(NotFoundExxception.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<ErrorResponse> handleNotFoundExxception(NotFoundExxception ex){
-        return buildErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler(UsuarioNaoEncontradoException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<ErrorResponse> handleUsuarioNaoEncontradoException(UsuarioNaoEncontradoException ex) {
-        return buildErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ResponseEntity<ErrorResponse> handleGenericException(Exception ex) {
-        return buildErrorResponse(MensagensErro.ERRO_INTERNO, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     private ResponseEntity<ErrorResponse> buildErrorResponse(String message, HttpStatus status) {

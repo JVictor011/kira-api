@@ -13,7 +13,7 @@ public class UsuarioMapper {
         return Usuario.builder()
                 .nome(dto.getNome())
                 .email(dto.getEmail())
-                .cpf(dto.getCpf())
+                .documento(dto.getDocumento())
                 .dataNascimento(dto.getDataNascimento())
                 .permissao(dto.getPermissao() != null ? dto.getPermissao() : Permissao.LOCATARIO)
                 .build();
@@ -24,7 +24,7 @@ public class UsuarioMapper {
                 .id(usuario.getId())
                 .nome(usuario.getNome())
                 .email(usuario.getEmail())
-                .cpf(usuario.getCpf())
+                .documento(usuario.getDocumento())
                 .dataNascimento(usuario.getDataNascimento())
                 .permissao(usuario.getPermissao())
                 .build();
@@ -33,7 +33,7 @@ public class UsuarioMapper {
     public void update(Usuario usuario, UsuarioRequestDTO dto) {
         usuario.setNome(dto.getNome());
         usuario.setEmail(dto.getEmail());
-        usuario.setCpf(dto.getCpf());
+        usuario.setDocumento(dto.getDocumento());
         usuario.setDataNascimento(dto.getDataNascimento());
         usuario.setPermissao(dto.getPermissao() != null ? dto.getPermissao() : Permissao.LOCATARIO);
     }

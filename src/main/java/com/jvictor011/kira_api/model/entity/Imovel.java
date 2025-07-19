@@ -37,7 +37,7 @@ public class Imovel {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "imovel_id")
-    private List<Documento> fotos = new ArrayList<>();
+    private List<Arquivo> fotos = new ArrayList<>();
 
     @OneToOne
     private Usuario locador;

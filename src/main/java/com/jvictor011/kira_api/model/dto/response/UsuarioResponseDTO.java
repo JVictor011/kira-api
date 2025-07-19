@@ -19,7 +19,7 @@ public class UsuarioResponseDTO {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataNascimento;
-    private String cpf;
+    private String documento;
     private String email;
     private String password;
     private String confirmPassword;
