@@ -2,13 +2,12 @@ package com.jvictor011.kira_api.service;
 
 import com.jvictor011.kira_api.exception.*;
 import com.jvictor011.kira_api.mapper.UsuarioMapper;
-import com.jvictor011.kira_api.model.dto.UsuarioRequestDTO;
-import com.jvictor011.kira_api.model.dto.UsuarioResponseDTO;
+import com.jvictor011.kira_api.model.dto.request.UsuarioRequestDTO;
+import com.jvictor011.kira_api.model.dto.response.UsuarioResponseDTO;
 import com.jvictor011.kira_api.model.entity.Usuario;
 import com.jvictor011.kira_api.repository.UsuarioRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

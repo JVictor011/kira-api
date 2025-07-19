@@ -1,4 +1,4 @@
-package com.jvictor011.kira_api.model.dto;
+package com.jvictor011.kira_api.model.dto.request;
 
 import com.jvictor011.kira_api.model.enums.Permissao;
 import lombok.AllArgsConstructor;

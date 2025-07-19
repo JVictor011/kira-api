@@ -1,4 +1,4 @@
-package com.jvictor011.kira_api.model.dto;
+package com.jvictor011.kira_api.model.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jvictor011.kira_api.model.enums.Permissao;

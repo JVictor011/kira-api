@@ -1,7 +1,7 @@
 package com.jvictor011.kira_api.controller;
 
-import com.jvictor011.kira_api.model.dto.UsuarioRequestDTO;
-import com.jvictor011.kira_api.model.dto.UsuarioResponseDTO;
+import com.jvictor011.kira_api.model.dto.request.UsuarioRequestDTO;
+import com.jvictor011.kira_api.model.dto.response.UsuarioResponseDTO;
 import com.jvictor011.kira_api.service.UsuarioService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

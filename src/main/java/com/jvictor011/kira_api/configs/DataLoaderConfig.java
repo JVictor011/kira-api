@@ -19,7 +19,7 @@ public class DataLoaderConfig {
                 admin1.setNome("jv-dev");
                 admin1.setEmail("jv@gmail.com");
                 admin1.setPassword(passwordEncoder.encode("admJv@973!A@"));
-                admin1.setPermissao(Permissao.ADM);
+                admin1.setPermissao(Permissao.ADMIN);
                 usuarioRepository.save(admin1);
             }
 
@@ -28,7 +28,7 @@ public class DataLoaderConfig {
                 admin2.setNome("felipe");
                 admin2.setEmail("felipe@gmail.com");
                 admin2.setPassword(passwordEncoder.encode("felipe@435Af!"));
-                admin2.setPermissao(Permissao.ADM);
+                admin2.setPermissao(Permissao.ADMIN);
                 usuarioRepository.save(admin2);
             }
 
@@ -37,7 +37,7 @@ public class DataLoaderConfig {
                 admin3.setNome("vctr");
                 admin3.setEmail("vctr@gmail.com");
                 admin3.setPassword(passwordEncoder.encode("@Vw12345678."));
-                admin3.setPermissao(Permissao.ADM);
+                admin3.setPermissao(Permissao.ADMIN);
                 usuarioRepository.save(admin3);
             }
         };
