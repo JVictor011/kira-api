@@ -53,7 +53,6 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioDTO);
     }
 
-
     @ApiOperation(value = "Atualiza os dados de um usuário", notes = "Atualiza os dados de um usuário existente com base no ID informado.")
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioResponseDTO> update(

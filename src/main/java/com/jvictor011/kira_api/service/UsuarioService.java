@@ -24,7 +24,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 public class UsuarioService implements UserDetailsService {
 
     private final UsuarioRepository usuarioRepository;
@@ -34,6 +33,20 @@ public class UsuarioService implements UserDetailsService {
 
     @Qualifier("padrao")
     private final SenhaValidatorStrategy senhaValidator;
+
+    public UsuarioService(
+            UsuarioRepository usuarioRepository,
+            UsuarioMapper usuarioMapper,
+            PasswordEncoder passwordEncoder,
+            DocumentoValidatorFactory documentoValidatorFactory,
+            @Qualifier("padrao") SenhaValidatorStrategy senhaValidator
+    ) {
+        this.usuarioRepository = usuarioRepository;
+        this.usuarioMapper = usuarioMapper;
+        this.passwordEncoder = passwordEncoder;
+        this.documentoValidatorFactory = documentoValidatorFactory;
+        this.senhaValidator = senhaValidator;
+    }
 
     public void create(UsuarioRequestDTO dto){
         if (!dto.getPassword().equals(dto.getConfirmPassword())){
