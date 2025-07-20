@@ -13,7 +13,7 @@ public class ImovelResponseDTO {
     private Long id;
     private String titulo;
     private String descricao;
-    private String endereco;
+    private EnderecoResponseDTO endereco;
     private BigDecimal preco;
     private int numQuartos;
     private TipoImovel tipo;

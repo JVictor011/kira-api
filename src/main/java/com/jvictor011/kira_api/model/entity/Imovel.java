@@ -25,7 +25,6 @@ public class Imovel {
 
     private String titulo;
     private String descricao;
-    private String endereco;
     private BigDecimal preco;
 
     @Column(name = "numero_de_quartos")
@@ -41,4 +40,8 @@ public class Imovel {
 
     @OneToOne
     private Usuario locador;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, optional = false)
+    @JoinColumn(name = "endereco_id")
+    private Endereco endereco;
 }

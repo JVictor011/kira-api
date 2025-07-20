@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class ImovelRequestDTO {
     private String titulo;
     private String descricao;
-    private String endereco;
+    private EnderecoRequestDTO endereco;
     private BigDecimal preco;
     private int numQuartos;
     private TipoImovel tipo;
