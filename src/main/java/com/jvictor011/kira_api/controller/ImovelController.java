@@ -39,9 +39,9 @@ public class ImovelController {
     }
 
     @GetMapping("/usuario/{id}")
-    @ApiOperation("Buscar imóvel por ID")
-    public ResponseEntity<ImovelResponseDTO> getByUsuario(@PathVariable Long id) {
-        return ResponseEntity.ok(imovelService.getDTOById(id));
+    @ApiOperation("Retornar todos os imoveis do locador")
+    public ResponseEntity<List<ImovelResponseDTO>> getByUsuario(@PathVariable Long id) {
+        return ResponseEntity.ok(imovelService.getByUsuarioDTO(id));
     }
 
     @GetMapping("/filtro")
