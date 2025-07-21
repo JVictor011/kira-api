@@ -33,7 +33,7 @@ public class ImovelService {
     @Transactional
     public ImovelResponseDTO create(ImovelRequestDTO dto) {
         Usuario locador = usuarioRepository.findById(dto.getLocadorId())
-                .orElseThrow(() -> new NotFoundException("Locador não encontrado"));
+                .orElseThrow(() -> new NotFoundException(MensagensErro.LOCADOR_NAO_ENCONTRADO));
 
         Imovel imovel = imovelMapper.toEntity(dto, locador);
         imovel = imovelRepository.save(imovel);

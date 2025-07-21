@@ -8,6 +8,7 @@ import com.jvictor011.kira_api.model.entity.Imovel;
 import com.jvictor011.kira_api.model.entity.Usuario;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,6 +32,7 @@ public class ImovelMapper {
                 .mobiliado(dto.isMobiliado())
                 .area(dto.getArea())
                 .locador(locador)
+                .fotos(new ArrayList<>())
                 .build();
     }
 

@@ -6,6 +6,9 @@ public class MensagensErro {
     public static final String USUARIO_CADASTRADO = "Já existe um usuário cadastrado com as informações fornecidas. Por favor, verifique os dados e tente novamente.";
     public static final String USUARIO_NAO_ENCONTRADO = "Usuário não encontrado. Verifique os dados informados.";
 
+    // Locador
+    public static final String LOCADOR_NAO_ENCONTRADO = "Locador não encontrado. Verifique os dados informados e tente novamente.";
+
     // Senha
     public static final String SENHA_NAO_COINCIDE = "As senhas informadas não coincidem. Por favor, digite novamente a senha corretamente.";
     public static final String SENHA_NAO_VALIDA = "A senha fornecida não atende aos requisitos de segurança. Deve conter pelo menos 8 caracteres, uma letra maiúscula, uma minúscula e um caractere especial.";
