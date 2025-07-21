@@ -21,6 +21,10 @@ public class MensagensErro {
     // IMOVEL
     public static final String IMOVEL_NAO_ENCONTRADO = "Imóvel não encontrado. Verifique o identificador e tente novamente.";
 
+    // FAVORITOS
+    public static final String FAVORITO_NAO_ENCONTRADO = "Não foi possível encontrar o favorito solicitado.";
+    public static final String FAVORITO_ACESSO_NEGADO = "Você não tem permissão para remover este favorito.";
+
     // Genérico
     public static final String ERRO_INTERNO = "Ocorreu um erro inesperado no servidor. Estamos trabalhando para resolver o problema. Tente novamente mais tarde.";
     public static final String DADOS_INVALIDOS = "Dados inválidos. Por favor, verifique os campos informados e tente novamente.";

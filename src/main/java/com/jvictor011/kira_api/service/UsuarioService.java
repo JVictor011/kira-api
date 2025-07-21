@@ -83,7 +83,7 @@ public class UsuarioService implements UserDetailsService {
                 .orElseThrow(() -> new NotFoundException(MensagensErro.USUARIO_NAO_ENCONTRADO));
     }
 
-    public Long getIdByToken() {
+    public Usuario getByToken() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication == null || !authentication.isAuthenticated()) {
@@ -96,6 +96,12 @@ public class UsuarioService implements UserDetailsService {
         if (usuario == null) {
             throw new NotFoundException(MensagensErro.USUARIO_NAO_ENCONTRADO);
         }
+
+        return usuario;
+    }
+
+    public Long getIdByToken() {
+        Usuario usuario = getByToken();
 
         return usuario.getId();
     }
