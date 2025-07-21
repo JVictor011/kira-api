@@ -49,37 +49,59 @@ public class ImovelService {
                 .orElseThrow(() -> new NotFoundException(MensagensErro.IMOVEL_NAO_ENCONTRADO));
     }
 
+    public List<Imovel> getByUsuario(Long id){
+        return imovelRepository.findByLocador_Id(id);
+    }
+
+    public List<Imovel> filtrarPorQuartos(int numQuartos) {
+        return imovelRepository.findByNumQuartos(numQuartos);
+    }
+
+    public List<Imovel> filtrarPorFaixaDePreco(BigDecimal precoMin, BigDecimal precoMax) {
+        return imovelRepository.findByPrecoBetween(precoMin, precoMax);
+    }
+
+    public List<Imovel> filtrarPorQuartosEPreco(int numQuartos, BigDecimal precoMin, BigDecimal precoMax) {
+        return imovelRepository.findByNumQuartosAndPrecoBetween(numQuartos, precoMin, precoMax);
+    }
+
+    @Transactional(readOnly = true)
+    public List<ImovelResponseDTO> getByUsuarioDTO(Long id){
+        return getByUsuario(id).stream()
+                .map(imovelMapper::toDTO)
+                .collect(Collectors.toList());
+    }
+
     @Transactional(readOnly = true)
     public List<ImovelResponseDTO> getAllDTOs() {
-        return imovelRepository.findAll().stream()
+        return getAllEntities().stream()
                 .map(imovelMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
     public ImovelResponseDTO getDTOById(Long id) {
-        Imovel imovel = imovelRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(MensagensErro.IMOVEL_NAO_ENCONTRADO));
+        Imovel imovel = getEntityById(id);
         return imovelMapper.toDTO(imovel);
     }
 
     @Transactional(readOnly = true)
-    public List<ImovelResponseDTO> filtrarPorQuartos(int numQuartos) {
-        return imovelRepository.findByNumQuartos(numQuartos).stream()
+    public List<ImovelResponseDTO> filtrarPorQuartosDTO(int numQuartos) {
+        return filtrarPorQuartos(numQuartos).stream()
                 .map(imovelMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
-    public List<ImovelResponseDTO> filtrarPorFaixaDePreco(BigDecimal precoMin, BigDecimal precoMax) {
-        return imovelRepository.findByPrecoBetween(precoMin, precoMax).stream()
+    public List<ImovelResponseDTO> filtrarPorFaixaDePrecoDTO(BigDecimal precoMin, BigDecimal precoMax) {
+        return filtrarPorFaixaDePreco(precoMin, precoMax).stream()
                 .map(imovelMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
-    public List<ImovelResponseDTO> filtrarPorQuartosEPreco(int numQuartos, BigDecimal precoMin, BigDecimal precoMax) {
-        return imovelRepository.findByNumQuartosAndPrecoBetween(numQuartos, precoMin, precoMax).stream()
+    public List<ImovelResponseDTO> filtrarPorQuartosEPrecoDTO(int numQuartos, BigDecimal precoMin, BigDecimal precoMax) {
+        return filtrarPorQuartosEPreco(numQuartos, precoMin, precoMax).stream()
                 .map(imovelMapper::toDTO)
                 .collect(Collectors.toList());
     }

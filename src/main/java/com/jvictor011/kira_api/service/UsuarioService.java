@@ -57,7 +57,7 @@ public class UsuarioService implements UserDetailsService {
         }
 
         boolean exists = usuarioRepository.existsByEmail(dto.getEmail());
-        if (!exists){
+        if (exists){
             throw new ConflictException(MensagensErro.EMAIL_JA_CADASTRADO);
         }
 

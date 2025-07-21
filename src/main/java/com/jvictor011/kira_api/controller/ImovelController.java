@@ -38,6 +38,12 @@ public class ImovelController {
         return ResponseEntity.ok(imovelService.getDTOById(id));
     }
 
+    @GetMapping("/usuario/{id}")
+    @ApiOperation("Buscar imóvel por ID")
+    public ResponseEntity<ImovelResponseDTO> getByUsuario(@PathVariable Long id) {
+        return ResponseEntity.ok(imovelService.getDTOById(id));
+    }
+
     @GetMapping("/filtro")
     @ApiOperation("Filtrar imóveis com Specification (nº quartos e faixa de preço)")
     public ResponseEntity<List<ImovelResponseDTO>> filtrarComSpecification(

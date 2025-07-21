@@ -16,4 +16,6 @@ public interface ImovelRepository extends JpaRepository<Imovel, Long>, JpaSpecif
 
     List<Imovel> findByNumQuartosAndPrecoBetween(int numQuartos, BigDecimal precoMin, BigDecimal precoMax);
 
+    List<Imovel> findByLocador_Id(Long id);
+
 }
