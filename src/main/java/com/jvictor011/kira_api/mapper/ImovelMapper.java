@@ -16,9 +16,11 @@ import java.util.stream.Collectors;
 public class ImovelMapper {
 
     private final EnderecoMapper enderecoMapper;
+    private final UsuarioMapper usuarioMapper;
 
-    public ImovelMapper(EnderecoMapper enderecoMapper) {
+    public ImovelMapper(EnderecoMapper enderecoMapper, UsuarioMapper usuarioMapper) {
         this.enderecoMapper = enderecoMapper;
+        this.usuarioMapper = usuarioMapper;
     }
 
     public Imovel toEntity(ImovelRequestDTO dto, Usuario locador) {
@@ -54,7 +56,7 @@ public class ImovelMapper {
                                 arquivo.getUrl(),
                                 arquivo.getKey()))
                         .collect(Collectors.toList()))
-                .locadorId(imovel.getLocador().getId())
+                .locador(usuarioMapper.toDTO(imovel.getLocador()))
                 .build();
     }
 

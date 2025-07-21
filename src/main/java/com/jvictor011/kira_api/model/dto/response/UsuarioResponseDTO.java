@@ -21,7 +21,5 @@ public class UsuarioResponseDTO {
     private LocalDate dataNascimento;
     private String documento;
     private String email;
-    private String password;
-    private String confirmPassword;
     private Permissao permissao;
 }

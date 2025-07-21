@@ -20,5 +20,5 @@ public class ImovelResponseDTO {
     private boolean mobiliado;
     private Double area;
     private List<ArquivoResponseDTO> fotos;
-    private Long locadorId;
+    private UsuarioResponseDTO locador;
 }
